@@ -97,10 +97,10 @@ listItems.forEach((listelement) => {
     });
   });
 });
+const outer = document.querySelector(".outer");
 const inputcountry = document.querySelector("#countryinput");
 inputcountry.addEventListener("keyup", (param) => {
   let value = param.target.value;
-  const outer = document.querySelector(".outer");
   const section = outer.childNodes;
   section.forEach((element) => {
     let country = element.querySelector(".name");
@@ -113,3 +113,74 @@ inputcountry.addEventListener("keyup", (param) => {
     }
   });
 });
+
+let isDarkMode = false; // Variable to track dark mode state
+
+function toggleDarkMode() {
+  const body = document.body;
+  const search = document.querySelector(".search");
+  const countryInput = document.querySelector("#countryinput");
+  const regionSearch = document.querySelector(".btn");
+  const header = document.getElementsByTagName("header")[0];
+  const darkModeButton = document.querySelector(".darkmode");
+  const menu = document.querySelector(".menu");
+  const ul = menu.childNodes[1]; // Assuming the ul is the second child node
+
+  if (isDarkMode) {
+    // Switch to light mode
+    body.style.backgroundColor = "hsl(0, 0%, 98%)";
+    body.style.color = " hsl(200, 15%, 8%)";
+    search.style.backgroundColor = "hsl(0, 0%, 100%)";
+    countryInput.style.backgroundColor = "hsl(0, 0%, 100%)";
+    countryInput.style.border = "";
+    countryInput.style.boxShadow = "5px 5px 15px gray";
+    regionSearch.style.backgroundColor = "hsl(0, 0%, 100%)";
+    regionSearch.style.boxShadow = "5px 5px 15px gray";
+    regionSearch.style.color = "hsl(200, 15%, 8%)";
+    regionSearch.style.border = "";
+    header.style.border = "";
+    header.style.boxShadow = "5px 5px 15px gray";
+    darkModeButton.style.color = " hsl(200, 15%, 8%)";
+
+    ul.style.backgroundColor = "hsl(0, 0%, 100%)";
+    ul.style.color = " hsl(200, 15%, 8%)";
+
+    menu.style.backgroundColor = "hsl(0, 0%, 100%)";
+    outer.style.backgroundColor = "hsl(0, 0%, 100%)";
+    outer.childNodes.forEach((element) => {
+      element.style.backgroundColor = "hsl(0, 0%, 100%)";
+      element.style.color = "hsl(200, 15%, 8%)";
+    });
+  } else {
+    // Switch to dark mode
+    body.style.backgroundColor = "hsl(207, 26%, 17%)";
+    body.style.color = "hsl(0,0%,100%)";
+    search.style.backgroundColor = "hsl(209, 23%, 22%)";
+    countryInput.style.backgroundColor = "hsl(209, 23%, 22%)";
+    countryInput.style.border = "0";
+    countryInput.style.boxShadow = "5px 5px 15px black";
+    regionSearch.style.backgroundColor = "hsl(209, 23%, 22%)";
+    regionSearch.style.boxShadow = "5px 5px 15px black";
+    regionSearch.style.border = "0";
+    regionSearch.style.color = "hsl(0, 0%, 100%)";
+    header.style.border = "0";
+    header.style.boxShadow = "5px 5px 15px black";
+    darkModeButton.style.color = "hsl(0,0%,100%)";
+
+    ul.style.backgroundColor = "hsl(209, 23%, 22%)";
+    ul.style.color = "hsl(0, 0%, 100%)";
+
+    menu.style.backgroundColor = "hsl(209, 23%, 22%)";
+    outer.style.backgroundColor = "hsl(207, 26%, 17%)";
+    outer.childNodes.forEach((element) => {
+      element.style.backgroundColor = "hsl(209, 23%, 22%)";
+      element.style.color = "hsl(0, 0%, 100%)";
+    });
+  }
+
+  // Toggle the dark mode state
+  isDarkMode = !isDarkMode;
+}
+
+const darkModeButton = document.querySelector(".darkmode");
+darkModeButton.addEventListener("click", toggleDarkMode);

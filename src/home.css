@@ -14,7 +14,14 @@ header {
 }
 .darkmode {
   position: absolute;
-  right: 50px;
+  right: 2%;
+  width: 10em;
+  background: url("nightmode.svg");
+  background-repeat: no-repeat;
+  border: 0;
+}
+.darkmode:hover {
+  cursor: pointer;
 }
 .search {
   /* width: 50%; */
@@ -42,6 +49,9 @@ header {
   width: 20em;
   box-shadow: 5px 5px 15px gray;
 }
+.menu {
+  width: 16.5em;
+}
 .menu ul {
   background-color: hsl(0, 0%, 100%);
   text-align: left;
@@ -53,6 +63,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .section {
   height: 350px;
   flex-wrap: wrap;
@@ -97,6 +108,7 @@ header {
   cursor: pointer;
 }
 .menu ul li {
+  padding-bottom: 10px;
   list-style: none;
   text-decoration: none;
 }
@@ -111,9 +123,17 @@ header {
   color: black;
   cursor: pointer;
 }
+
 .visible {
+  /* width: 20em; */
+  margin-top: 40px;
   display: block;
 }
+/* .displaydarkmode {
+  .outer {
+    background-color: hsl(207, 26%, 17%);
+  }
+} */
 @media all and (min-width: 350px) and (max-width: 700px) {
   .btn,
   .menu {
@@ -122,7 +142,7 @@ header {
     left: 7%;
   }
   #countryinput {
-    width: 50%;
+    width: 80%;
   }
   .outer {
     margin-top: 100px;
