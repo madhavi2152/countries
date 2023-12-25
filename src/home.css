@@ -114,12 +114,15 @@ header {
 .visible {
   display: block;
 }
-@media all and (min-width: 350px) and (max-width: 600px) {
+@media all and (min-width: 350px) and (max-width: 700px) {
   .btn,
   .menu {
     position: absolute;
     top: 250px;
     left: 7%;
+  }
+  #countryinput {
+    width: 50%;
   }
   .outer {
     margin-top: 100px;
