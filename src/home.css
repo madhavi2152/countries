@@ -21,7 +21,7 @@ header {
   padding: 30px;
 }
 #countryinput {
-  background-image: url("../seachicon.svg");
+  background-image: url("seachicon.svg");
   background-size: 10%;
   background-position: left;
   background-repeat: no-repeat;
