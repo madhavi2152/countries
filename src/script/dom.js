@@ -90,8 +90,9 @@ listItems.forEach((listelement) => {
       reg = reg.outerText;
       reg = reg.split(" ");
       reg = reg[1];
-      if (reg === region) element.style.display = "block";
-      if (reg !== region) {
+      if (reg.toLowerCase() === region.toLowerCase())
+        element.style.display = "block";
+      if (reg.toLowerCase() !== region.toLowerCase()) {
         element.style.display = "none";
       }
     });
@@ -105,10 +106,10 @@ inputcountry.addEventListener("keyup", (param) => {
   section.forEach((element) => {
     let country = element.querySelector(".name");
     country = country.textContent;
-    if (country.includes(value)) {
+    if (country.toLowerCase().includes(value.toLowerCase())) {
       element.style.display = "block";
     }
-    if (!country.includes(value)) {
+    if (!country.toLowerCase().includes(value.toLowerCase())) {
       element.style.display = "none";
     }
   });
