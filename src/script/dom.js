@@ -146,7 +146,7 @@ function toggleDarkMode() {
     ul.style.color = " hsl(200, 15%, 8%)";
 
     menu.style.backgroundColor = "hsl(0, 0%, 100%)";
-    outer.style.backgroundColor = "hsl(0, 0%, 100%)";
+    outer.style.backgroundColor = "hsl(0, 0%, 98%)";
     outer.childNodes.forEach((element) => {
       element.style.backgroundColor = "hsl(0, 0%, 100%)";
       element.style.color = "hsl(200, 15%, 8%)";
