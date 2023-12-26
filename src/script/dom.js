@@ -65,13 +65,17 @@ async function main() {
 }
 
 window.onload = main();
-console.log("hi sai");
 const button = document.querySelector(".btn");
 const menu = document.querySelector(".menu");
 button.addEventListener("click", () => {
   if (menu.classList.contains("visible")) {
     menu.classList.remove("visible");
   } else {
+    const outer = document.querySelector(".outer");
+    const elements = outer.childNodes;
+    elements.forEach((element) => {
+      element.style.display = "block";
+    });
     menu.classList.add("visible");
   }
 });
@@ -81,8 +85,8 @@ listItems.forEach((listelement) => {
   listelement.addEventListener("click", () => {
     menu.classList.remove("visible");
     let region = listelement.innerHTML;
-    console.log(region);
-    console.log(region);
+    // console.log(region);
+    // console.log(region);
     const outer = document.querySelector(".outer");
     const section = outer.childNodes;
     section.forEach((element) => {
@@ -156,7 +160,7 @@ function toggleDarkMode() {
     // Switch to dark mode
     body.style.backgroundColor = "hsl(207, 26%, 17%)";
     body.style.color = "hsl(0,0%,100%)";
-    search.style.backgroundColor = "hsl(209, 23%, 22%)";
+    search.style.backgroundColor = "hsl(207, 26%, 17%)";
     countryInput.style.backgroundColor = "hsl(209, 23%, 22%)";
     countryInput.style.border = "0";
     countryInput.style.boxShadow = "5px 5px 15px black";
